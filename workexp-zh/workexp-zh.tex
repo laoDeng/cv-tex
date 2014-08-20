@@ -21,6 +21,9 @@
 \usepackage[scale=0.9]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
 
+% 强调用扩展包
+\usepackage{ulem}
+
 % 个人信息
 \name{陈}{登}
 %\title{简历题目 (可选项)}                     % 可选项、如不需要可删除本行
@@ -58,46 +61,73 @@
 %\cvitem{导师}{导师}
 %\cvitem{说明}{\small 论文简介}
 
-\section{项目经验}
-\cventry{2013.09 -- 2014.04}{SerDes接口实现}{}{}{}{SerDes接口是一种新的串行高速接口，常用于高端模数转换芯片。速率可达10Gbps。%
+\section{工作经验}
+
+\cventry{2013.01 -- 2014.06}{轴承振动检测系统}{}{}{}{
+滚动轴承故障的自动检测系统。%
+\begin{itemize}%
+\item OMRON PLC自动控制程序设计、线路设计、机柜设计、线路连接调试。
+\item 机械部分气路设计、急停保护设计。
+\item 嵌入式WinCe、Linux程序设计，主要包括串口控制PLC程序，USB控制采样卡。
+\item 信号采集及预处理算法设计，主要包括FFT、FIR滤波器。
+\item 基于MATLAB GUI分析、SQL存储数据，信号直接通过MATLAB进行算法处理。
+\end{itemize}}
+
+\cventry{2014.03 -- 2014.08}{镇海炼化仪表配电箱设计安装}{}{}{}{
+镇海炼化部分仪表24V配电箱设计安装。%
+\begin{itemize}%
+\item PHOENIX 40A 24V电源供电回路设计、主备通路设计。
+\item 线路线槽安装，电缆标号设计打印裁剪安装。
+\item 空气开关、漏电保护、保险丝回路设计安装。
+\end{itemize}}
+
+\cventry{2013.09 -- 2014.04}{SerDes接口实现}{}{}{}{
+SerDes接口是一种新的串行高速接口，常用于高端模数转换芯片。速率可达10Gbps。%
 \begin{itemize}%
 \item JESD204B协议理解及核心内容提炼，全面掌握接口的工作流程，包括硬件接口、成帧方式、编解码器、差错控制等。
 \item CML电路设计，通过对Cadence Virtuoso的全定制芯片设计工具的使用，来完成高速接口电路设计。
 \item 基于JESD204B协议的8B/10B编解码器设计，参考802.3协议，利用Verilog语言实现。
 \end{itemize}}
-\cventry{2010.01 -- 2013.06}{轴承振动检测系统}{}{}{}{
-滚动轴承故障的自动检测系统。%
+
+
+\cventry{2013.01 -- 2014.01}{餐厨垃圾焚烧设备组装调试维修}{}{}{}{
+主要负责船用垃圾焚烧设备控制器的组装、调试工作。%
 \begin{itemize}%
-\item 信号采集及预处理算法设计，主要包括FFT、FIR滤波器。
-\item 嵌入式WinCE编程，主要包括串口控制PLC程序，USB控制采样卡。
-\item 基于MATLAB GUI分析、SQL存储数据，将采集到的信号直接通过MATLAB做算法处理实验。
+\item 贴片封装元器件电路焊接、检查、维修。
+\item 上电测试，检查故障，保障安全使用。
+\item MSP430程序烧写调试。
 \end{itemize}}
 
-\section{学习经验}
-\cvitemwithcomment{数字信号处理}{}{熟悉数字滤波器设计，傅立叶变换；了解现代滤波技术；曾多次任该课程助教。}
-\cvitemwithcomment{通信原理}{}{熟悉各种调制解调方法，经典编解码方法；了解MIMO技术，无线通信系统。}
-\cvitemwithcomment{单片机}{}{熟悉单片机工作原理，汇编编程，驱动开发，曾用Verilog实现过简易单片机功能。}
-\cvitemwithcomment{计算机网络}{}{熟悉分组交换原理，计算机网络组建，路由器、交换机配置；了解TCP/IP协议。}
-\cvitemwithcomment{数据结构与算法}{}{熟悉排序算法、链表、二叉树、图；了解机器学习算法，SVM，DBN。}
 
-\section{计算机技能}
-\cvdoubleitem{编程}{C, C++, ASM}{脚本}{Python, Bash, Makefile}
-\cvdoubleitem{硬件}{Verilog, PLC}{仿真}{Matlab, Modelsim}
-\cvdoubleitem{排版}{\LaTeX, Word, Markdown}{系统}{Windows, Ubuntu, CentOS}
+\section{工作经验证明}
 
-\section{资格证书}
-\cvdoubleitem{CET-4}{510}{CET-6}{480}
-\cvdoubleitem{IELTS}{6.0}{普通话}{二甲}
-\cvdoubleitem{计算机二级}{C程序语言}{计算机三级}{网络技术}
+\quad\quad 兹证明\emph{陈登}（性别：男 身份证：330211199007270052）于2012年8月1日至2014年8月1日在宁波和路测控有限公司工作2年。 
+\newline	 
+特此证明
+\newline
+\newline
+ \rightline{单位（盖章）：宁波和路测控有限公司}
+\newline
+ \rightline{2014.8.1}
 
-\section{社会工作}
-\cvitemwithcomment{院学生会办公室主任}{负责学生会年鉴制作，院内学生会议安排。}{2011.05 -- 2012.05}
+%\section{计算机技能}
+%\cvdoubleitem{编程}{C, C++, ASM}{脚本}{Python, Bash, Makefile}
+%\cvdoubleitem{硬件}{Verilog, PLC}{仿真}{Matlab, Modelsim}
+%\cvdoubleitem{排版}{\LaTeX, Word, Markdown}{系统}{Windows, Ubuntu, CentOS}
+
+%\section{资格证书}
+%\cvdoubleitem{CET-4}{510}{CET-6}{480}
+%\cvdoubleitem{IELTS}{6.0}{普通话}{二甲}
+%\cvdoubleitem{计算机二级}{C程序语言}{计算机三级}{网络技术}
+
+%\section{社会工作}
+%\cvitemwithcomment{院学生会办公室主任}{负责学生会年鉴制作，院内学生会议安排。}{2011.05 -- 2012.05}
 %\cvitemwithcomment{副班长}{班级评奖、评优，活动组织。}{2010.09 -- 2011.06}
 
-\section{兴趣爱好}
-\cvitem{骑行}{\small 2012年完成川藏骑行；2013年环青海湖。}
+%\section{兴趣爱好}
+%\cvitem{骑行}{\small 2012年完成川藏骑行；2013年环青海湖。}
 %\cvitem{建站}{\small 掌握建站基本原理，利用Jekyll在GitHub上托管博客。}
-\cvitem{MOOC}{\small 2013年完成5门课程学习。}
+%\cvitem{MOOC}{\small 2013年完成5门课程学习。}
 
 %\section{其他 1}
 %\cvlistitem{项目 1}
