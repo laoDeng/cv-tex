@@ -6,7 +6,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv 主题
 \moderncvstyle{banking}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
@@ -61,41 +61,105 @@
 %\cvitem{导师}{导师}
 %\cvitem{说明}{\small 论文简介}
 
-\section{工作经验}
+\section{工作经历}
 
-\cventry{2013.1 -- 2014.6}{轴承振动检测系统}{}{}{}{
-滚动轴承故障的自动检测系统。%
+\cventry{2010.07 -- 2014.08}{宁波和路测控有限公司}{}{}{}{
+宁波和路测控系统有限公司是目前国内较早从事状态监测系统开发应用的专业公司之一。%
 \begin{itemize}%
-\item OMRON PLC自动控制程序设计、线路设计、机柜设计、线路连接调试。
-\item 机械部分气路设计、急停保护设计。
-\item 嵌入式WinCe、Linux程序设计，主要包括串口控制PLC程序，USB控制采样卡。
-\item 信号采集及预处理算法设计，主要包括FFT、FIR滤波器。
-\item 基于MATLAB数据分析，采样GUI设计、SQL存储数据。
-\item 版本控制服务器GitLab搭建。
+\item 职位：研发员
+	\begin{itemize}
+	\item 已有项目维护，中石化镇海炼化厂动态监控平台故障监测及维护。
+	\item 新项目开发，轴承测振系统设计研发、USB采样板设计研发。
+	\item 产品生产制造，舰载餐厨垃圾焚烧控制器生产。
+	\end{itemize}
+\end{itemize}}
+
+\section{工作相关经验}
+
+\cventry{2010.07 -- 2014.08}{轴承振动检测系统}{}{}{}{
+滚动轴承故障的自动检测系统整套流程设计。
+现阶段大部分轴承厂采用的是人耳听来判断轴承质量好坏。
+使用数字化的方法可以将轴承故障判断交由自动化的设备来处理。
+本系统就是将振动信号由模拟转化为数字信号，再经过算法处理得到判断结果。
+整套系统包括了机械、采样和控制三大部分，分别采用了业内较为先进的技术。%
+\begin{itemize}%
+\item 硬件平台：Raspberry Pi + Omron PLC + MSP430F149 + FT232H
+\item 软件平台：Eclipse + Ubuntu + Raspbian + MySQL + CCS
+\item 工具：C++/C + Python + JavaFX + Matlab
+\item 职责：
+	\begin{itemize}
+	\item 信号：基于MSP430F149及FT232H构成采集卡，根据数据长度和采样频率对振动信号进行采集。
+	\item 预处理：对采样到的信号进行电平转换、FIR滤波、FFT变化、Hilbert-Huang变换等去噪工作。
+	\item 数据：Matlab GUI设计数据采集界面通过自动或人工方式采集数据打好标签，存入服务器数据库。
+	\item 实现：嵌入式Linux编程，主要包括串口控制PLC程序，USB采样卡程序，控制流程程序，UI程序。
+	\item 气动：机械控制主要采用气动，需要设计气路，通过PLC控制电磁阀来完成动作，也包括了急停保护气路。
+	\item 电机：机械系统有几个部件需要使用步进电机进行动作，由PLC产生高频脉冲结合驱动器完成电机动作。
+	\item 控制：PLC对机械部分控制，上位机通过C Command模式控制PLC并或取PLC状态。
+	\end{itemize}
 \end{itemize}}
 
 \cventry{2014.7 -- 2014.9}{镇海炼化仪表配电箱设计安装}{}{}{}{
-镇海炼化部分仪表24V配电箱设计安装。%
+镇海炼化部分仪表24V配电箱设计安装。
+该套仪表是比较核心的仪表，需要可靠的电力供应，配电箱的设计要求较高。
+选材上全部采用进口品牌的电气元件，包括空气开关、按钮、接线端、漏电保护等。%
 \begin{itemize}%
-\item 24V电源供电回路设计、主备通路设计。
-\item 线路线槽安装，电缆标号设计打印裁剪安装。
-\item 空气开关、漏电保护、保险丝回路设计安装。
+\item 工具：AutoCAD
+\item 职责：
+	\begin{itemize}
+	\item 回路图：原设备配件箱回路图缺失，需要根据接线线路重新绘制，并重新设计主备回路。
+	\item 设计图：配电箱整体布线布局、插槽、端子、开孔的设计。
+	\item 线缆：根据统一线缆标号标准及布线、电流、电压要求合理制作线缆。
+	\item 安装调试：电气元件安装连接，主备电源安装，通电调试。
+	\end{itemize}
 \end{itemize}}
 
-\cventry{2013.9 -- 2014.4}{SerDes接口实现}{}{}{}{
-SerDes接口是一种新的串行高速接口，常用于高端模数转换芯片。速率可达10Gbps。%
+\cventry{2013.7 -- 2014.9}{镇海炼化动态监控设备维护}{}{}{}{
+公司在镇海炼化安装有大型机组动态监控装置，发生故障时需要人员及时维护。
+主要包括网络通路故障排除，故障设备修理，元器件更换等。
+部分机器常年工作在机房中容易产生故障需要及时修理。%
 \begin{itemize}%
-\item JESD204B协议理解及核心内容提炼，全面掌握接口的工作流程，包括硬件接口、成帧方式、编解码器、差错控制等。
-\item CML电路设计，通过对Cadence Virtuoso的全定制芯片设计工具的使用，来完成高速接口电路设计。
-\item 基于JESD204B协议的8B/10B编解码器设计，参考802.3协议，利用Verilog语言实现。
+\item 职责：
+	\begin{itemize}
+	\item 网络通路故障：由于厂内网络端口有时不稳定容易发生信号无法上传服务器问题。
+	\item 故障设备修理：现场检测故障设备拆回公司进行维护修理。
+	\item 元器件更换：一些易损部件如风扇等，发现故障需要更换。
+	\end{itemize}
+\end{itemize}}
+
+\cventry{2013.09 -- 2014.04}{SerDes接收端实现}{}{}{}{
+SerDes接口是一种新的串行高速接口，常用于高端模数转换芯片。
+最高传输速率可达10Gbps以上，是未来工业用串行通信系统的发展方向。
+本设计主要根据JESD204B协议，使用Verilog语言设计、Modelsim仿真、Design Compiler综合。
+完成了接收端数据链路层和传输层的工作，并根据其中8B/10B解码器设计成果发表核心期刊论文。%
+\begin{itemize}%
+\item 平台：Windows + CentOS + Sublime
+\item 工具：Verilog + Modelsim + Design Compiler 
+\item 职责：
+	\begin{itemize}
+	\item 协议：JESD204B协议理解及核心内容提炼，掌握接口的工作流程。
+	\item 数据链路层：8B/10B解码器设计、解扰器设计、码群同步、帧同步、lane同步、差错控制。
+	\item 传输层：解帧器、控制接口、差错控制。
+	\end{itemize}
 \end{itemize}}
 
 \cventry{2012.8 -- 2013.9}{餐厨垃圾焚烧设备组装调试维修}{}{}{}{
-主要负责船用垃圾焚烧设备控制器的组装、调试工作。%
+主要负责船用垃圾焚烧设备控制器的组装、调试工作。
+该设备运用于海上船只的餐厨垃圾焚烧控制，需要满足高温、潮湿、颠簸等复杂环境的工作要求。
+使用稳定性较高的MSP430F149芯片作为主控芯片，点阵屏作为人机交互界面。
+包括温度传感器、电磁传感器、按键控制等部分的设计，成品的安装调试。%
 \begin{itemize}%
-\item 贴片封装元器件电路焊接、检查、维修。
-\item 上电测试，检查故障，保障安全使用。
-\item MSP430程序烧写调试。
+\item 硬件平台：MSP430F149
+\item 软件平台：CCS
+\item 工具：C++/C
+\item 职责：
+	\begin{itemize}
+	\item 信号：利用MSP430F149控制ADC芯片对温度传感器、8通道电磁传感器采样。
+	\item 数据：同预先设置门限比较，出现故障自动报警并采取急停设备保障安全。
+	\item 实现：C语言单片机编程，主要是ADC芯片控制采样，显示屏控制，按键扫描等。
+	\item 控制：通过继电器，根据MCU指令对焚烧装置进行控制。
+	\item 组装：贴片封装元器件电路焊接、检查、测试、维修，航空接头焊接，船用电缆焊接。
+	\item 测试：程序烧写，温度传感器校准，导通测试，继电器正常工作测试。
+	\end{itemize}
 \end{itemize}}
 
 
@@ -111,24 +175,6 @@ SerDes接口是一种新的串行高速接口，常用于高端模数转换芯�
 \newline
  \rightline{2014.8.1}
 
-%\section{计算机技能}
-%\cvdoubleitem{编程}{C, C++, ASM}{脚本}{Python, Bash, Makefile}
-%\cvdoubleitem{硬件}{Verilog, PLC}{仿真}{Matlab, Modelsim}
-%\cvdoubleitem{排版}{\LaTeX, Word, Markdown}{系统}{Windows, Ubuntu, CentOS}
-
-%\section{资格证书}
-%\cvdoubleitem{CET-4}{510}{CET-6}{480}
-%\cvdoubleitem{IELTS}{6.0}{普通话}{二甲}
-%\cvdoubleitem{计算机二级}{C程序语言}{计算机三级}{网络技术}
-
-%\section{社会工作}
-%\cvitemwithcomment{院学生会办公室主任}{负责学生会年鉴制作，院内学生会议安排。}{2011.05 -- 2012.05}
-%\cvitemwithcomment{副班长}{班级评奖、评优，活动组织。}{2010.09 -- 2011.06}
-
-%\section{兴趣爱好}
-%\cvitem{骑行}{\small 2012年完成川藏骑行；2013年环青海湖。}
-%\cvitem{建站}{\small 掌握建站基本原理，利用Jekyll在GitHub上托管博客。}
-%\cvitem{MOOC}{\small 2013年完成5门课程学习。}
 
 %\section{其他 1}
 %\cvlistitem{项目 1}
