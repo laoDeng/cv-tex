@@ -6,7 +6,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv 主题
 \moderncvstyle{banking}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
@@ -21,6 +21,9 @@
 \usepackage[scale=0.9]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
 
+% 自定义命令
+\newcommand{\bigquad}{\qquad\qquad\qquad}
+
 % 个人信息
 \name{陈}{登}
 %\title{简历题目 (可选项)}                     % 可选项、如不需要可删除本行
@@ -29,9 +32,9 @@
 %\phone[fixed]{+2~(345)~678~901}               % 可选项、如不需要可删除本行
 %\phone[fax]{+3~(456)~789~012}                 % 可选项、如不需要可删除本行
 \email{edward.chend@gmail.com}                    % 可选项、如不需要可删除本行
-\homepage{http://laodeng.github.com}                  % 可选项、如不需要可删除本行
-\extrainfo{男 1990.7}                 % 可选项、如不需要可删除本行
-\photo[64pt][0.4pt]{/home/laodeng/Document/TeX/photo_new.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+\homepage{laodeng.github.com}                  % 可选项、如不需要可删除本行
+\extrainfo{Power by \LaTeX}                 % 可选项、如不需要可删除本行
+%\photo[64pt][0.4pt]{/home/laodeng/Document/TeX/photo_new.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 %\quote{擅长文献转换为产品。实习时间：2014.5-2014.9}                          % 可选项、如不需要可删除本行
 
 % 显示索引号;仅用于在简历中使用了引言
@@ -50,57 +53,102 @@
 \maketitle
 
 \section{教育背景}
-\cventry{2009年 -- 2013年}{学士}{中国地质大学（武汉）}{通信工程}{}{}  % 第3到第6编码可留白
-\cventry{2013年 -- 2015年}{硕士}{中国地质大学（武汉）}{电子与通信工程}{}{}
+\cventry{2009 -- 2013}{学士}{中国地质大学（武汉）}{通信工程}{}{}  % 第3到第6编码可留白
+\cventry{2013 -- 2015}{硕士}{中国地质大学（武汉）}{电子与通信工程}{}{}
 
 %\section{毕业论文}
 %\cvitem{题目}{\emph{题目}}
 %\cvitem{导师}{导师}
 %\cvitem{说明}{\small 论文简介}
 
-\section{项目经验}
+\section{项目经历}
+
 \cventry{2013.09 -- 2014.04}{SerDes接收端实现}{}{}{}{SerDes接口是一种新的串行高速接口，常用于高端模数转换芯片。速率可达10Gbps。
-主要使用Verilog语言设计、Modelsim仿真、Design Compiler综合，完成了接收端解码接差错控制工作，并据此发表核心期刊论文%
+主要使用Verilog语言设计、Modelsim仿真、Design Compiler综合，完成了接收端解码、差错控制工作，并据此发表核心期刊论文。%
 \begin{itemize}%
 \item 平台：Windows + CentOS + Sublime
 \item 工具：Verilog + Modelsim + Design Compiler 
-\item 职责：JESD204B协议理解及核心内容提炼，全面掌握接口的工作流程，包括硬件接口、成帧方式、编解码器、差错控制等。完成接收端的设计工作并做到180nm工艺标准下200MHz以上的工作速率，完成仿真及综合。
+\item 职责：
+	\begin{itemize}
+	\item JESD204B协议理解及核心内容提炼，掌握接口的工作流程。
+	\item 数据链路层：8B/10B解码器设计、解扰器设计、码群同步、帧同步、lane同步、差错控制。
+	\item 传输层：解帧器、控制接口、差错控制。
+	\end{itemize}
 \end{itemize}}
-\cventry{2010.01 -- 2013.06}{轴承振动检测系统}{}{}{}{
-滚动轴承故障的自动检测系统整套流程设计。%
+\cventry{2010.07 -- 2014.08}{轴承振动检测系统}{}{}{}{
+滚动轴承故障的自动检测系统整套流程设计。期望改变现有小型轴承检测技术人耳听觉作为判断依据的现状。%
 \begin{itemize}%
-\item 信号：基于MSP430及FT232H构成采集卡，对信号进行FIR滤波、FFT变化、Hilbert-Huang变换等。
-\item 算法：预处理后信号，基于大量数据，利用学习算法进行分类判决。
-\item 实现：嵌入式Linux编程，主要包括串口控制PLC服务程序，USB采样卡服务程序，控制流程服务程序，UI程序。
-\item 控制：PLC对机械部分控制，通过串口同上位机通信。
+\item 硬件平台：Raspberry Pi + Omron PLC + MSP430F149 + FT232H
+\item 软件平台：Eclipse + Ubuntu + Raspbian + MySQL + CCS
+\item 工具：C++/C + Python + JavaFX + Matlab
+\item 职责：
+	\begin{itemize}
+	\item 信号：基于MSP430F149及FT232H构成采集卡，对信号进行FIR滤波、FFT变化、Hilbert-Huang变换等。
+	\item 数据：Matlab GUI设计数据采集界面通过自动或人工方式采集数据打好标签，存入服务器数据库。
+	\item 算法：预处理后信号，基于大量数据，利用学习算法进行分类判决。
+	\item 实现：嵌入式Linux编程，主要包括串口控制PLC程序，USB采样卡程序，控制流程程序，UI程序。
+	\item 控制：PLC对机械部分控制，上位机通过C Command模式控制PLC并或取PLC状态。
+	\end{itemize}
 \end{itemize}}
 
-\section{学习经验}
-\cvitemwithcomment{数字信号处理}{}{熟悉数字滤波器设计，傅立叶变换，Hilbert-huang算法；了解现代滤波技术；多次任该课程助教。}
-\cvitemwithcomment{通信原理}{}{熟悉各种调制解调方法，经典编解码方法；了解MIMO技术，无线通信系统。}
-\cvitemwithcomment{单片机}{}{熟悉单片机工作原理，汇编编程，驱动开发，用Verilog实现过简易单片机功能。}
-\cvitemwithcomment{计算机网络}{}{熟悉分组交换原理，计算机网络组建，路由器、交换机配置；了解TCP/IP协议；Socket编程。}
-\cvitemwithcomment{数据结构与算法}{}{熟悉排序算法、链表、二叉树、图；了解机器学习算法，SVM，DBN。}
+\section{实习经历}
 
-\section{计算机技能}
-\cvdoubleitem{编程}{C, C++, ASM}{脚本}{Python, Bash}
-\cvdoubleitem{硬件}{Verilog, PLC}{仿真}{Matlab, Modelsim, Design Compiler}
-\cvdoubleitem{排版}{\LaTeX, Word, Markdown}{系统}{Windows, Ubuntu, CentOS}
-\cvdoubleitem{版本}{Git}{数据库}{MySQL, SQL Server}
-
-\section{资格证书}
-\cvdoubleitem{CET-4}{510}{CET-6}{485}
-\cvdoubleitem{IELTS}{6.0}{普通话}{二甲}
-\cvdoubleitem{计算机二级}{C程序语言}{计算机三级}{网络技术}
+\cventry{2010.07 -- 2014.08}{宁波和路测控有限公司}{}{}{}{
+宁波和路测控系统有限公司是目前国内较早从事状态监测系统开发应用的专业公司之一。%
+\begin{itemize}%
+\item 职位：研发员
+	\begin{itemize}
+	\item 已有项目维护，中石化镇海炼化厂动态监控平台故障监测及维护。
+	\item 新项目开发，轴承测振系统设计研发、USB采样板设计研发。
+	\item 产品生产制造，舰载餐厨垃圾焚烧控制器生产。
+	\end{itemize}
+\end{itemize}}
 
 \section{社会工作}
+
 \cvitemwithcomment{院学生会办公室主任}{负责学生会年鉴制作，院内学生会议安排。}{2011.05 -- 2012.05}
 \cvitemwithcomment{副班长}{班级评奖、评优，活动组织。}{2010.09 -- 2011.06}
 
+\section{学习经历}
+
+\cvitemwithcomment{数字信号处理}{}{熟悉数字滤波器设计，傅立叶、Hilbert-huang变换；了解现代滤波技术；多次任该课程助教。}
+\cvitemwithcomment{通信原理}{}{熟悉各种调制解调方法，经典编解码方法；了解MIMO技术，无线通信系统。}
+\cvitemwithcomment{单片机}{}{熟悉单片机工作原理，汇编编程，驱动开发，用Verilog实现过简易单片机功能。}
+\cvitemwithcomment{计算机网络}{}{熟悉分组交换原理，计算机网络组建，路由器、交换机配置；了解TCP/IP协议；Socket编程。}
+\cvitemwithcomment{算法}{}{熟悉排序算法、链表、二叉树、图；了解机器学习算法，SVM，DBN。}
+
+\section{计算机技能}
+
+\subsection{编程}
+\cvdoubleitem{C/C++}{\hfill 4年\qquad 精通\bigquad}{Verilog}{\hfill 2年\qquad 精通\bigquad}
+\cvdoubleitem{Python}{\hfill 2年\qquad 熟练\bigquad}{Bash}{\hfill 1年\qquad 一般\bigquad}
+\subsection{工具}
+\cvdoubleitem{Matlab}{\hfill 4年\qquad 精通\bigquad}{Modelsim}{\hfill 2年\qquad 熟练\bigquad}
+\cvdoubleitem{Git}{\hfill 2年\qquad 熟练\bigquad}{Design Compiler}{\hfill 1年\qquad 一般\bigquad}
+\cvdoubleitem{Word}{\hfill 5年\qquad 熟练\bigquad}{\LaTeX}{\hfill 2年\qquad 熟练\bigquad}
+\cvdoubleitem{Vim}{\hfill 2年\qquad 熟练\bigquad}{PLC}{\hfill 1年\qquad 熟练\bigquad}
+\subsection{系统}
+\cvdoubleitem{Windows}{\hfill 8年\qquad 精通\bigquad}{Ubuntu}{\hfill 2年\qquad 熟练\bigquad}
+\cvdoubleitem{Raspbian}{\hfill 1年\qquad 熟练\bigquad}{CentOS}{\hfill 1年\qquad 一般\bigquad}
+\subsection{数据库}
+\cvdoubleitem{MySQL}{\hfill 1年\qquad 一般\bigquad}{SQL Server}{\hfill 1年\qquad 熟练\bigquad}
+
+\section{资格证书}
+
+\subsection{英语}
+\cvdoubleitem{CET-4}{510}{CET-6}{485}
+\cvdoubleitem{IELTS}{6.0}{}{}
+\subsection{计算机}
+\cvdoubleitem{NCER二级}{C程序语言}{NCER三级}{网络技术}
+\subsection{其他}
+\cvdoubleitem{普通话}{二甲}{}{}
+
 \section{兴趣爱好}
+
 \cvitem{骑行}{\small 2012年完成川藏骑行；2013年环青海湖。}
 \cvitem{建站}{\small 掌握建站基本原理，利用Jekyll在GitHub上托管博客；内网搭建GitLab服务器。}
-\cvitem{MOOC}{\small 2013年完成5门课程学习。}
+\cvitem{MOOC}{\small 2013年完成5门课程学习；2014年目前完成1门课程学习。}
+\cvitem{摇滚乐}{\small 有去LiveHouse听现场音乐的习惯；2011年五一期间曾去北京草莓、迷笛音乐节。}
 
 %\section{其他 1}
 %\cvlistitem{项目 1}
@@ -128,7 +176,8 @@
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
-\clearpage\end{CJK}
+\clearpage
+\end{CJK}
 \end{document}
 
 
