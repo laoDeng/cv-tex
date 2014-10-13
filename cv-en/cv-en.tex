@@ -1,0 +1,175 @@
+%% start of file `template-zh.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv 主题
+\moderncvstyle{banking}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+
+% 字符编码
+%\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+%\usepackage{CJKutf8}
+
+
+
+% 调整页面出血
+\usepackage[scale=0.9]{geometry}
+%\setlength{\hintsc对信号进行FIR滤波、FFT变化、Hilbert-Huang变换等olumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
+
+% 自定义命令
+\newcommand{\bigquad}{\qquad\qquad\qquad}
+
+% 个人信息
+\name{\emph{Chen}}{\emph{Deng}}
+%\title{简历题目 (可选项)}                     % 可选项、如不需要可删除本行
+%\address{中国地质大学（武汉）}{}            % 可选项、如不需要可删除本行
+\phone[mobile]{159~9426~2277}              % 可选项、如不需要可删除本行
+%\phone[fixed]{+2~(345)~678~901}               % 可选项、如不需要可删除本行
+%\phone[fax]{+3~(456)~789~012}                 % 可选项、如不需要可删除本行
+\email{edward.chend@gmail.com}                    % 可选项、如不需要可删除本行
+\homepage{laodeng.github.com}                  % 可选项、如不需要可删除本行
+\extrainfo{Power by \LaTeX}                 % 可选项、如不需要可删除本行
+%\photo[64pt][0.4pt]{/home/laodeng/Document/TeX/photo_new.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+%\quote{擅长文献转换为产品。实习时间：2014.5-2014.9}                          % 可选项、如不需要可删除本行
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
+\maketitle
+
+\section{Education}
+\cventry{2009 -- 2013}{Bachelor}{China University of Geosciences（Wuhan）}{Communication Engineering}{Faculty of Mechanical and Electronic Information}{}  % 第3到第6编码可留白
+\cventry{2013 -- 2015}{Master}{China University of Geosciences（Wuhan）}{Electronics and Communications Engineering}{Faculty of Mechanical and Electronic Information}{}
+
+%\section{毕业论文}
+%\cvitem{题目}{\emph{题目}}
+%\cvitem{导师}{导师}
+%\cvitem{说明}{\small 论文简介}
+
+\section{Projects}
+
+\cventry{2013.09 -- 2014.04}{SerDes Receiver}{}{}{}{SerDes interface is a new high-speed serial interfaces, commonly used in analog-digital conversion chip. Rates up to 10Gbps. 
+The main design using Verilog language, Modelsim simulation, Design Compiler synthesis. Completed the work of the link layer and transport layer in  receiver and published journal articles.%
+\begin{itemize}%
+\item Platform：Windows + CentOS + Sublime
+\item Tools：Verilog + Modelsim + Design Compiler 
+\item Duty：
+	\begin{itemize}
+	\item Protocol: JESD204B protocol understanding and refining the core master workflow interface.
+	\item Data Link Layer: Designed 8B/10B Decoder, descrambler, code group synchronization, frame synchronization, lane synchronization and error control.
+	\item Transport Layer: Designed deframer, control interface and error control.
+	\end{itemize}
+\end{itemize}}
+\cventry{2010.07 -- 2014.08}{Bearing vibration detection system}{}{}{}{
+Automatic rolling bearing fault detection system. Expected to change the existing small bearing human auditory detection technology as the basis to judge the status quo.%
+\begin{itemize}%
+\item Hardware：Raspberry Pi + Omron PLC + MSP430F149 + FT232H
+\item Software：Eclipse + Ubuntu + Raspbian + MySQL + CCS
+\item Tools：C++/C + Python + JavaFX + Matlab
+\item Duty：
+	\begin{itemize}
+	\item Signal: Based on MSP430F149 and FT232H constitute sample card. It can flexibly change the length of the sampling frequency and data via configuration interface.
+	\item Preprocess: The sampled signal level conversion, FIR filters, FFT, Hilbert-Huang transform and denoising work.
+	\item Data: Matlab GUI design data capture interface, automatically or manually collect data , labeled it and stored the data in database.
+	\item Algorithms: preprocessing the signal, based on large amounts of data, the use of learning algorithm to classify the decision.
+	\item Implementation: Embedded Linux programming, including serial PLC program control, USB sample card program, the control flow of the program, UI program.
+	\item Control: PLC to control the mechanical parts, take PLC status by C Command mode.
+	\end{itemize}
+\end{itemize}}
+
+\section{Work}
+
+\cventry{2010.07 -- 2014.08}{Ningbo HOLO Instruments}{}{}{}{
+Ningbo HOLO Instruments is one of the earliest in the condition monitoring system development and application of professional firms.%
+\begin{itemize}%
+\item Maintenance of existing projects, Sinopec Zhenhai Refining \& Chemical Plant dynamic monitoring platform fault monitoring and maintenance.
+\item Development of new projects, bearing vibration measurement system design and development, USB sampling board design and development.
+\item Product manufacturing, food waste incineration controller shipboard production.
+\end{itemize}}
+
+\section{Social}
+
+\cvitemwithcomment{Student Union Office}{Responsible for student yearbook production.}{2011.05 -- 2012.05}
+\cvitemwithcomment{Vice squad}{Class awards, activities of the organization.}{2010.09 -- 2011.06}
+
+\section{Computer Skills}
+
+\subsection{Programming}
+\cvdoubleitem{C/C++}{\hfill 4 year\qquad Skilled\bigquad}{Verilog}{\hfill 2 year\qquad Skilled\bigquad}
+\cvdoubleitem{Python}{\hfill 2 year\qquad General\bigquad}{Bash}{\hfill 1 year\qquad General\bigquad}
+\subsection{Tools}
+\cvdoubleitem{Matlab}{\hfill 4 year\qquad Skilled\bigquad}{Modelsim}{\hfill 2 year\qquad Skilled\bigquad}
+\cvdoubleitem{Git}{\hfill 2 year\qquad General\bigquad}{Design Compiler}{\hfill 1 year\qquad General\bigquad}
+\cvdoubleitem{Word}{\hfill 5 year\qquad Skilled\bigquad}{\LaTeX}{\hfill 2 year\qquad Skilled\bigquad}
+\cvdoubleitem{Vim}{\hfill 2 year\qquad General\bigquad}{PLC}{\hfill 1 year\qquad Skilled\bigquad}
+\subsection{OS}
+\cvdoubleitem{Windows}{\hfill 8 year\qquad Skilled\bigquad}{Ubuntu}{\hfill 2 year\qquad Skilled\bigquad}
+\cvdoubleitem{Raspbian}{\hfill 1 year\qquad Skilled\bigquad}{CentOS}{\hfill 1 year\qquad General\bigquad}
+\subsection{Datanase}
+\cvdoubleitem{MySQL}{\hfill 1 year\qquad General\bigquad}{SQL Server}{\hfill 1 year\qquad Skilled\bigquad}
+
+\section{Certificates}
+
+\subsection{Language}
+\cvdoubleitem{CET-4}{510}{CET-6}{485}
+\cvdoubleitem{IELTS}{6.0}{}{}
+\subsection{Computer}
+\cvdoubleitem{NCER}{C programming language}{NCER}{Network Technology}
+
+\section{Interests}
+
+\cvitem{Riding}{\small 2012 completion of the Sichuan-Tibet riding; 2013 Qinghai Lake.}
+\cvitem{Website}{\small Master station basic principle, the use Jekyll hosted blog on GitHub; build GitLab server within the network.}
+\cvitem{MOOC}{\small 2013 to complete five courses; 2014 currently completed a course of study.}
+\cvitem{Rock}{\small There used to go LiveHouse listen to live music; went to Beijing strawberries, Midi Music Festival in 2011 during May.}
+\cvitem{Travel}{\small 2013 Thailand; 2013 Malaysia. .}
+
+%\section{其他 1}
+%\cvlistitem{项目 1}
+%\cvlistitem{项目 2}
+%\cvlistitem{项目 3}
+%
+%\renewcommand{\listitemsymbol}{-}             % 改变列表符号
+%
+%\section{其他 2}
+%\cvlistdoubleitem{项目 1}{项目 4}
+%\cvlistdoubleitem{项目 3}{}
+
+% 来自BibTeX文件但不使用multibib包的出版物
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+
+% 来自BibTeX文件并使用multibib包的出版物
+%\section{出版物}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+
+\clearpage
+%\end{CJK}
+\end{document}
+
+
+%% 文件结尾 `template-zh.tex'.
