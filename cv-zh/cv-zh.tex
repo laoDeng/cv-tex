@@ -70,16 +70,16 @@
 
 \section{项目经历}
 
-\cventry{2013.09 -- 2014.04}{SerDes接收端实现}{}{}{}{SerDes接口是一种新的串行高速接口，常用于高端模数转换芯片。速率可达10Gbps。
-主要使用Verilog语言设计、Modelsim仿真、Design Compiler综合，完成了接收端数据链路层和传输层的工作，并根据其中8B/10B解码器设计成果发表核心期刊论文。%
+\cventry{2013.09 -- 2015.05}{SerDes接收端实现}{}{}{}{JESD204B是一种新的串行高速接口协议，专门用于高速模数转换芯片。单通道速率可达12.5Gbps。
+主要使用Verilog语言设计、Modelsim仿真、Design Compiler综合，完成了接收端和发送端数据链路层的设计工作。%
 \begin{itemize}%
-\item 平台：Windows + CentOS + Sublime
+\item 平台：Ubuntu + Vim
 \item 工具：Verilog + Modelsim + Design Compiler 
 \item 职责：
 	\begin{itemize}
-	\item 协议：JESD204B协议理解及核心内容提炼，掌握接口的工作流程。
-	\item 数据链路层：8B/10B解码器设计、解扰器设计、码群同步、帧同步、lane同步、差错控制。
-	\item 传输层：解帧器、控制接口、差错控制。
+	\item 协议：JESD204B协议理解，掌握接口的工作流程、确定性时延实现方法、数据流处理方法等。
+	\item 数据链路层：8B/10B解码器设计、解扰器设计、码群同步、frame同步、lane同步、差错控制。
+	\item 确定性时延：本地Multiframe时钟对齐、缓冲器设计。
 	\end{itemize}
 \end{itemize}}
 \cventry{2010.07 -- 2014.08}{轴承振动检测系统}{}{}{}{
@@ -98,6 +98,19 @@
 	\item 控制：PLC对机械部分控制，上位机通过C Command模式控制PLC并或取PLC状态。
 	\item 气动：机械控制主要采用气动，需要设计气路，通过PLC控制电磁阀来完成动作，也包括了急停保护气路。
 	\item 电机：机械系统有几个部件需要使用步进电机进行动作，由PLC产生高频脉冲结合驱动器完成电机动作。
+	\end{itemize}
+\end{itemize}}
+\cventry{2014.11 -- 2015.03}{中石化镇海炼化动态监控平台升级改造}{}{}{}{
+取代原有的DSP架构，采用更灵活的ARM架构，采样节点也采用纯网络实现数据传输。%
+\begin{itemize}%
+\item 硬件平台：TM4C1294 + Raspberry Pi
+\item 软件平台：Raspbian + CCS
+\item 工具：C + Python + nc
+\item 职责：
+	\begin{itemize}
+	\item 结构：TM4C1294作为采样节点通过网络上传数据，Raspberry Pi作为工作节点收集节点数据完成本地处理和上传服务器工作。
+	\item 采样节点：需要实现峰值400KB/s的数据传输，最多需要监测12通道，每通道最高1.28K采样速率，以及辅助数据。
+	\item 工作节点：利用网络收集采集到的数据进行具体的处理，主要是进行FFT变化，并将相关数据上传至中心服务器。
 	\end{itemize}
 \end{itemize}}
 
